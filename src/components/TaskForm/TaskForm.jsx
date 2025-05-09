@@ -9,6 +9,7 @@ export const TaskForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
+    if (!form.elements.text.value.trim()) return;
     dispatch(addTask(form.elements.text.value));
     form.reset();
   };
